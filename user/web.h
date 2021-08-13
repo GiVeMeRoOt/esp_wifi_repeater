@@ -1,7 +1,6 @@
 #define CONFIG_PAGE "HTTP/1.0 200 OK\r\nContent-Type: text/html\r\n\r\n\
 <html>\
 <head></head>\
-<meta name='viewport' content='width=device-width, initial-scale=1'>\
 <body>\
 <h1>ESP WiFi NAT Router Config</h1>\
 <div id='config'>\
@@ -22,7 +21,7 @@ setTimeout(\"location.href = '/'\",10000);\
 </tr>\
 <tr>\
 <td>Password:</td>\
-<td><input type='password' name='password' value='%s'/></td>\
+<td><input type='text' name='password' value='%s'/></td>\
 </tr>\
 <td>Automesh:</td>\
 <td><input type='checkbox' name='am' value='mesh' %s></td>\
@@ -100,7 +99,6 @@ setTimeout(\"location.href = '/'\",10000);\
 #define LOCK_PAGE "HTTP/1.0 200 OK\r\nContent-Type: text/html\r\n\r\n\
 <html>\
 <head></head>\
-<meta name='viewport' content='width=device-width, initial-scale=1'>\
 <body>\
 <h1>ESP WiFi NAT Router Config</h1>\
 <div id='config'>\
