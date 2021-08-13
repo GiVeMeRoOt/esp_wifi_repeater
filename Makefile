@@ -129,13 +129,13 @@ all: checkdirs $(FW_FILE_1) $(FW_FILE_2) $(RBOOT_FILE) $(FW_BASE)/sha1sums
 
 
 $(FW_FILE_1): $(APP_AR)
-	$(Q) $(LD) -L$(BUILD_AREA)/esp-open-lwip -L$(SDK_LIBDIR) $(LD_SCRIPT1) $(LDFLAGS) -Wl,--start-group $(LIBS) $(APP_AR) -Wl,--end-group -o $(TARGET_OUT)
-	$(ESPTOOL) elf2image --version=2 $(TARGET_OUT) -o $(FW_FILE_1)
+	$(Q) $(LD) -L$(BUILD_AREA)/esp-open-lwip -L$(SDK_LIBDIR) $(LD_SCRIPT1) $(LDFLAGS) -Wl,--start-group $(LIBS) $(APP_AR) -Wl,--end-group -o $(FW_FILE_1)
+	#$(ESPTOOL) elf2image --version=2 $(TARGET_OUT) -o $(FW_FILE_1)
 
 
 $(FW_FILE_2): $(APP_AR)
-	$(Q) $(LD) -L$(BUILD_AREA)/esp-open-lwip -L$(SDK_LIBDIR) $(LD_SCRIPT2) $(LDFLAGS) -Wl,--start-group $(LIBS) $(APP_AR) -Wl,--end-group -o $(TARGET_OUT)
-	$(ESPTOOL) elf2image --version=2 $(TARGET_OUT) -o $(FW_FILE_2)
+	$(Q) $(LD) -L$(BUILD_AREA)/esp-open-lwip -L$(SDK_LIBDIR) $(LD_SCRIPT2) $(LDFLAGS) -Wl,--start-group $(LIBS) $(APP_AR) -Wl,--end-group -o $(FW_FILE_2)
+	#$(ESPTOOL) elf2image --version=2 $(TARGET_OUT) -o $(FW_FILE_2)
 
 $(RBOOT_FILE): rboot.bin
 	$(Q) cp rboot.bin $(RBOOT_FILE)
